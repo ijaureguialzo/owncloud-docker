@@ -58,7 +58,7 @@ services:
       - mysql:/var/lib/mysql
 
   redis:
-    image: redis:6
+    image: redis:${REDIS_VERSION}
     container_name: owncloud_redis
     restart: always
     command: [ "--databases", "1" ]
