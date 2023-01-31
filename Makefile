@@ -12,7 +12,7 @@ help: _header
 	@echo Opciones:
 	@echo ------------------------------------------
 	@echo start / stop / restart / stop-all
-	@echo build
+	@echo update
 	@echo logs
 	@echo workspace
 	@echo stats
@@ -43,8 +43,10 @@ restart: stop start
 stop-all:
 	@docker stop $(shell docker ps -aq)
 
-build:
-	@docker compose build
+_pull:
+	@docker compose pull
+
+update: _pull _start-command
 
 logs:
 	@docker compose logs owncloud
