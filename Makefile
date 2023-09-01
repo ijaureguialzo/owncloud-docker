@@ -15,6 +15,7 @@ help: _header
 	@echo update
 	@echo logs
 	@echo workspace
+	@echo scan
 	@echo stats
 	@echo clean
 	@echo ------------------------------------------
@@ -53,6 +54,9 @@ logs:
 
 workspace:
 	@docker compose exec owncloud /bin/bash
+
+scan:
+	@docker compose exec owncloud /bin/bash -c 'occ files:scan --all'
 
 stats:
 	@docker stats
