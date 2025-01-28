@@ -79,3 +79,5 @@ Temporary Items
 .env
 
 data/
+
+.env-owncloud
